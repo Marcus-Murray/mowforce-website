@@ -1103,6 +1103,19 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* Reorder service cards for tablet portrait - Lawn Maintenance & Mowing first */
+  .service-card:nth-child(1) {
+    order: 2; /* Lawn Edging moves to second */
+  }
+  
+  .service-card:nth-child(2) {
+    order: 1; /* Lawn Maintenance & Mowing moves to first */
+  }
+  
+  .service-card:nth-child(3) {
+    order: 3; /* Seasonal Clean-ups stays third */
+  }
+
   .contact-grid {
     grid-template-columns: 1fr !important;
     gap: var(--spacing-lg) !important;
@@ -1259,6 +1272,19 @@ body {
 
   .services-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Reorder service cards for mobile - Lawn Maintenance & Mowing first */
+  .service-card:nth-child(1) {
+    order: 2; /* Lawn Edging moves to second */
+  }
+  
+  .service-card:nth-child(2) {
+    order: 1; /* Lawn Maintenance & Mowing moves to first */
+  }
+  
+  .service-card:nth-child(3) {
+    order: 3; /* Seasonal Clean-ups stays third */
   }
 
   .service-card.featured {
