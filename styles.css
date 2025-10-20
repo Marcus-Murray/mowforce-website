@@ -816,7 +816,6 @@ body {
 
 .about-content-compact {
   padding-top: var(--spacing-lg);
-  text-align: center;
 }
 
 .about-text {
@@ -879,6 +878,11 @@ body {
   color: var(--grey-600);
   line-height: 1.5;
   margin: 0;
+}
+
+.about-cta {
+  text-align: center;
+  margin-top: var(--spacing-2xl);
 }
 
 /* ============================================
