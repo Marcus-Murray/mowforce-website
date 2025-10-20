@@ -301,7 +301,6 @@ body {
   overflow: hidden;
 }
 
-
 .hero-bg {
   position: absolute;
   top: 0;
@@ -934,6 +933,17 @@ body {
 .success-message {
   background: #d4edda;
   color: #155724;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  margin-top: var(--spacing-md);
+  text-align: center;
+  font-weight: var(--font-weight-medium);
+  display: none !important;
+}
+
+.error-message {
+  background: #f8d7da;
+  color: #721c24;
   padding: var(--spacing-md);
   border-radius: var(--radius-md);
   margin-top: var(--spacing-md);

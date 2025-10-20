@@ -249,7 +249,6 @@
             </div>
           </div>
         </div>
-
       </section>
 
       <!-- Services Section -->
@@ -506,9 +505,8 @@
               <form
                 class="contact-form"
                 id="contact-form"
-                action="mailto:marcus@mowforce.co.nz"
-                method="post"
-                enctype="text/plain"
+                autocomplete="on"
+                novalidate
               >
                 <div class="form-group">
                   <label for="name">Full Name *</label>
@@ -565,6 +563,13 @@
                   style="display: none"
                 >
                   Thank you! Your message has been sent successfully.
+                </div>
+                <div
+                  id="form-error"
+                  class="error-message"
+                  style="display: none"
+                >
+                  Sorry, there was an error sending your message. Please try again or contact us directly.
                 </div>
               </form>
             </div>

@@ -154,34 +154,59 @@
       });
 
       if (isValid) {
-        // Prepare email content
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value || 'Not provided';
-        const message = document.getElementById('message').value;
+        try {
+          // Prepare email content
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const phone = document.getElementById('phone').value || 'Not provided';
+          const message = document.getElementById('message').value;
 
-        const emailBody = `Name: ${name}%0D%0AEmail: ${email}%0D%0APhone: ${phone}%0D%0A%0D%0AMessage:%0D%0A${message}`;
-        const mailtoLink = `mailto:marcus@mowforce.co.nz?subject=New Quote Request from ${name}&body=${emailBody}`;
+          const emailBody = `Name: ${name}%0D%0AEmail: ${email}%0D%0APhone: ${phone}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+          const mailtoLink = `mailto:marcus@mowforce.co.nz?subject=New Quote Request from ${name}&body=${emailBody}`;
 
-        // Open email client
-        window.location.href = mailtoLink;
+          // Open email client
+          window.location.href = mailtoLink;
 
-        // Show success message
-        const successMessage = document.getElementById('form-success');
-        if (successMessage) {
-          successMessage.style.setProperty('display', 'block', 'important');
-          setTimeout(() => {
+          // Show success message
+          const successMessage = document.getElementById('form-success');
+          const errorMessage = document.getElementById('form-error');
+          
+          // Hide any existing error message
+          if (errorMessage) {
+            errorMessage.style.setProperty('display', 'none', 'important');
+          }
+          
+          if (successMessage) {
+            successMessage.style.setProperty('display', 'block', 'important');
+            setTimeout(() => {
+              successMessage.style.setProperty('display', 'none', 'important');
+            }, 5000);
+          }
+
+          // Reset form
+          contactForm.reset();
+
+          // Remove validation classes
+          formInputs.forEach((input) => {
+            input.classList.remove('invalid', 'valid');
+          });
+        } catch (error) {
+          // Show error message
+          const errorMessage = document.getElementById('form-error');
+          const successMessage = document.getElementById('form-success');
+          
+          // Hide any existing success message
+          if (successMessage) {
             successMessage.style.setProperty('display', 'none', 'important');
-          }, 5000);
+          }
+          
+          if (errorMessage) {
+            errorMessage.style.setProperty('display', 'block', 'important');
+            setTimeout(() => {
+              errorMessage.style.setProperty('display', 'none', 'important');
+            }, 5000);
+          }
         }
-
-        // Reset form
-        contactForm.reset();
-
-        // Remove validation classes
-        formInputs.forEach((input) => {
-          input.classList.remove('invalid', 'valid');
-        });
       } else {
         // Focus on first invalid field
         const firstInvalid = contactForm.querySelector('.invalid');
@@ -311,7 +336,7 @@
      ============================================ */
   // Lazy load images with intersection observer
   const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const img = entry.target;
         if (img.dataset.src) {
@@ -324,17 +349,17 @@
   });
 
   // Observe all lazy images
-  document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+  document.querySelectorAll('img[loading="lazy"]').forEach((img) => {
     imageObserver.observe(img);
   });
 
   // Debounce scroll events for better performance
   let scrollTimeout;
-  window.addEventListener('scroll', function() {
+  window.addEventListener('scroll', function () {
     if (scrollTimeout) {
       clearTimeout(scrollTimeout);
     }
-    scrollTimeout = setTimeout(function() {
+    scrollTimeout = setTimeout(function () {
       // Scroll handling code here
     }, 10);
   });
