@@ -825,32 +825,27 @@ body {
   font-size: 1rem;
 }
 
-.about-features-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-md);
+.about-features {
   margin: var(--spacing-xl) 0;
 }
 
-.about-feature-item {
+.about-feature {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  gap: var(--spacing-md);
   padding: var(--spacing-md);
-  background: var(--grey-50);
+  background: var(--grey-100);
   border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-md);
   transition: var(--transition);
-  border: 1px solid var(--grey-200);
 }
 
-.about-feature-item:hover {
-  background: var(--grey-100);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+.about-feature:hover {
+  background: var(--grey-200);
+  transform: translateX(8px);
 }
 
 .about-feature-icon {
+  flex-shrink: 0;
   width: 50px;
   height: 50px;
   background: var(--primary);
@@ -858,7 +853,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: var(--spacing-sm);
 }
 
 .about-feature-icon i {
@@ -866,18 +860,17 @@ body {
   color: var(--dark);
 }
 
-.about-feature-text h4 {
-  font-size: 1rem;
+.about-feature-content h4 {
+  font-size: 1.125rem;
   font-weight: var(--font-weight-semibold);
   color: var(--grey-900);
   margin-bottom: 0.25rem;
 }
 
-.about-feature-text p {
-  font-size: 0.875rem;
+.about-feature-content p {
+  font-size: 0.9375rem;
   color: var(--grey-600);
-  line-height: 1.5;
-  margin: 0;
+  line-height: 1.6;
 }
 
 .about-cta {
@@ -1175,10 +1168,6 @@ body {
   }
 
 
-  .about-features-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-sm);
-  }
 
   .contact-grid {
     grid-template-columns: 1fr !important;
@@ -1265,12 +1254,7 @@ body {
     max-height: 400px;
   }
 
-  .about-features-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-sm);
-  }
-
-  .about-feature-item {
+  .about-feature {
     padding: var(--spacing-sm);
   }
 
@@ -1430,12 +1414,7 @@ body {
     max-height: 350px;
   }
 
-  .about-features-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-xs);
-  }
-
-  .about-feature-item {
+  .about-feature {
     padding: var(--spacing-xs);
   }
 
