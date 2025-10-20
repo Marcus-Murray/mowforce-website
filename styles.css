@@ -822,6 +822,11 @@ body {
   margin-top: var(--spacing-xl);
 }
 
+.about-cta-inline .btn {
+  display: inline-block;
+  margin: 0 auto;
+}
+
 .about-text {
   color: var(--grey-600);
   margin-bottom: var(--spacing-lg);
