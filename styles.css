@@ -1154,12 +1154,12 @@ body {
     max-width: 100% !important;
     overflow-x: hidden !important;
   }
-  
+
   .contact-info {
     max-width: 100% !important;
     overflow-x: hidden !important;
   }
-  
+
   .contact-card {
     padding: var(--spacing-md) !important;
     min-width: 0 !important;
@@ -1168,14 +1168,14 @@ body {
     overflow-x: hidden !important;
     margin: 0 !important;
   }
-  
+
   .contact-form-wrapper {
     padding: var(--spacing-md) !important;
     min-width: 0 !important;
     max-width: 100% !important;
     overflow-x: hidden !important;
   }
-  
+
   .contact-form {
     max-width: 100% !important;
     overflow-x: hidden !important;
@@ -1184,7 +1184,7 @@ body {
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .contact-grid {
     grid-template-columns: 1fr !important;
     gap: var(--spacing-lg) !important;
@@ -1192,12 +1192,12 @@ body {
     max-width: 100% !important;
     overflow-x: hidden !important;
   }
-  
+
   .contact-info {
     max-width: 100% !important;
     overflow-x: hidden !important;
   }
-  
+
   .contact-card {
     padding: var(--spacing-md) !important;
     min-width: 0 !important;
@@ -1205,14 +1205,14 @@ body {
     overflow-x: hidden !important;
     margin: 0 !important;
   }
-  
+
   .contact-form-wrapper {
     padding: var(--spacing-md) !important;
     min-width: 0 !important;
     max-width: 100% !important;
     overflow-x: hidden !important;
   }
-  
+
   .contact-form {
     max-width: 100% !important;
     overflow-x: hidden !important;
@@ -1389,12 +1389,12 @@ body {
     max-width: 100% !important;
     overflow-x: hidden !important;
   }
-  
+
   .contact-info {
     max-width: 100% !important;
     overflow-x: hidden !important;
   }
-  
+
   .contact-card {
     padding: var(--spacing-sm) !important;
     min-width: 0 !important;
@@ -1402,14 +1402,14 @@ body {
     overflow-x: hidden !important;
     margin: 0 !important;
   }
-  
+
   .contact-form-wrapper {
     padding: var(--spacing-sm) !important;
     min-width: 0 !important;
     max-width: 100% !important;
     overflow-x: hidden !important;
   }
-  
+
   .contact-form {
     max-width: 100% !important;
     overflow-x: hidden !important;
@@ -1427,6 +1427,14 @@ body {
     padding: 0.875rem 1.5rem;
     font-size: 1rem;
   }
+  
+  /* Center "Get Started Today" button on mobile */
+  .about-content .btn-large {
+    display: block !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    width: fit-content !important;
+  }
 
   .hero-logo {
     top: var(--spacing-sm);
@@ -1440,6 +1448,14 @@ body {
   .hero-logo-inline-img {
     height: 120px;
     max-width: 100%;
+  }
+  
+  /* Center "Get Started Today" button on mobile */
+  .about-content .btn-large {
+    display: block !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    width: fit-content !important;
   }
 
   .contact-form-wrapper {
