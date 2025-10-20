@@ -816,6 +816,7 @@ body {
 
 .about-content-compact {
   padding-top: var(--spacing-lg);
+  text-align: center;
 }
 
 .about-text {
