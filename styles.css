@@ -971,6 +971,9 @@ body {
   font-family: var(--font-primary);
   font-size: 1rem;
   transition: var(--transition-fast);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .form-group input:focus,
@@ -1146,6 +1149,19 @@ body {
 
   .contact-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .contact-card {
+    padding: var(--spacing-md);
+    min-width: 0;
+    word-wrap: break-word;
+  }
+  
+  .contact-form-wrapper {
+    padding: var(--spacing-md);
+    min-width: 0;
   }
 
   .stats-grid {
@@ -1159,7 +1175,7 @@ body {
     overflow-x: hidden;
     padding: 0 var(--spacing-sm);
   }
-  
+
   /* Ensure all elements fit within viewport */
   * {
     max-width: 100%;
@@ -1282,6 +1298,19 @@ body {
 
   .stat-description {
     font-size: 0.8rem;
+  }
+  
+  .contact-grid {
+    gap: var(--spacing-sm);
+    padding: 0 var(--spacing-xs);
+  }
+  
+  .contact-card {
+    padding: var(--spacing-sm);
+  }
+  
+  .contact-form-wrapper {
+    padding: var(--spacing-sm);
   }
 
   .hero-title {
