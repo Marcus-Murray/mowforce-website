@@ -786,8 +786,8 @@ body {
 
 .about-badge {
   position: absolute;
-  bottom: var(--spacing-lg);
-  right: var(--spacing-lg);
+  top: var(--spacing-lg);
+  left: var(--spacing-lg);
   background: var(--primary);
   color: var(--dark);
   padding: var(--spacing-md);
@@ -814,7 +814,12 @@ body {
 }
 
 .about-content-compact {
+  text-align: left;
+}
+
+.about-cta-section {
   text-align: center;
+  margin-top: var(--spacing-2xl);
 }
 
 .about-text {
