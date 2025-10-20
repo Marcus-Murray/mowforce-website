@@ -760,31 +760,37 @@ body {
 .about {
   padding: var(--spacing-3xl) 0;
   background: var(--light);
+  overflow: hidden;
 }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-3xl);
-  align-items: center;
-}
-
-.about-image {
+.about-wrapper {
   position: relative;
+  display: grid;
+  grid-template-columns: 45% 55%;
+  align-items: center;
+  min-height: 650px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.about-image img {
+.about-image-full {
+  position: relative;
+  height: 100%;
+  min-height: 650px;
+}
+
+.about-image-full img {
   width: 100%;
-  height: auto;
-  border-radius: var(--radius-2xl);
-  box-shadow: var(--shadow-xl);
+  height: 100%;
   object-fit: cover;
+  border-radius: 0 var(--radius-2xl) var(--radius-2xl) 0;
+  box-shadow: var(--shadow-xl);
 }
 
 .about-badge {
   position: absolute;
   bottom: var(--spacing-lg);
-  right: var(--spacing-lg);
+  left: var(--spacing-lg);
   background: var(--primary);
   color: var(--dark);
   padding: var(--spacing-md);
@@ -793,6 +799,7 @@ body {
   align-items: center;
   gap: var(--spacing-sm);
   box-shadow: var(--shadow-lg);
+  z-index: 2;
 }
 
 .about-badge i {
@@ -810,57 +817,85 @@ body {
   font-size: 0.875rem;
 }
 
+.about-card-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: var(--spacing-2xl);
+  margin-left: -3rem;
+  z-index: 3;
+  position: relative;
+}
+
+.about-card {
+  background: white;
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-2xl);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  max-width: 600px;
+}
+
+.about-card-title {
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--grey-900);
+  margin-bottom: var(--spacing-sm);
+}
+
+.about-card-subtitle {
+  font-size: 1rem;
+  color: var(--grey-600);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.6;
+}
+
 .about-text {
   color: var(--grey-600);
   margin-bottom: var(--spacing-md);
   line-height: 1.8;
+  font-size: 0.9375rem;
 }
 
-.about-features {
-  margin: var(--spacing-xl) 0;
+.about-features-compact {
+  margin: var(--spacing-lg) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
 }
 
-.about-feature {
+.about-feature-compact {
   display: flex;
   gap: var(--spacing-md);
-  padding: var(--spacing-md);
-  background: var(--grey-100);
-  border-radius: var(--radius-lg);
-  margin-bottom: var(--spacing-md);
-  transition: var(--transition);
+  align-items: flex-start;
 }
 
-.about-feature:hover {
-  background: var(--grey-200);
-  transform: translateX(8px);
-}
-
-.about-feature-icon {
+.about-feature-compact i {
   flex-shrink: 0;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background: var(--primary);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.about-feature-icon i {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: var(--dark);
+  margin-top: 0.125rem;
 }
 
-.about-feature-content h4 {
-  font-size: 1.125rem;
+.about-feature-compact strong {
+  display: block;
+  font-size: 0.9375rem;
   font-weight: var(--font-weight-semibold);
   color: var(--grey-900);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.125rem;
 }
 
-.about-feature-content p {
-  font-size: 0.9375rem;
+.about-feature-compact span {
+  display: block;
+  font-size: 0.875rem;
   color: var(--grey-600);
+  line-height: 1.5;
 }
 
 /* ============================================
@@ -1139,12 +1174,34 @@ body {
    Responsive Design
    ============================================ */
 @media (max-width: 1024px) {
-  .about-grid {
+  .about-wrapper {
     grid-template-columns: 1fr;
+    min-height: auto;
   }
 
-  .about-image {
-    order: -1;
+  .about-image-full {
+    min-height: 400px;
+    max-height: 500px;
+  }
+
+  .about-image-full img {
+    border-radius: var(--radius-2xl);
+  }
+
+  .about-card-wrapper {
+    margin-left: 0;
+    margin-top: -3rem;
+    padding: 0 var(--spacing-md);
+    justify-content: center;
+  }
+
+  .about-card {
+    max-width: 100%;
+  }
+
+  .about-badge {
+    left: auto;
+    right: var(--spacing-lg);
   }
 
   .contact-grid {
@@ -1226,14 +1283,19 @@ body {
     padding: 0 var(--spacing-sm);
   }
 
-  /* Center the About CTA button on mobile */
-  .about-content {
-    text-align: center;
+  /* About section mobile adjustments */
+  .about-card {
+    padding: var(--spacing-lg);
   }
-  /* Keep feature rows readable while parent is centered */
-  .about-content .about-features,
-  .about-content .about-feature {
-    text-align: left;
+  
+  .about-card-title {
+    font-size: 1.75rem;
+  }
+  
+  .about-feature-compact i {
+    width: 36px;
+    height: 36px;
+    font-size: 1.125rem;
   }
 
   /* Ensure all elements fit within viewport */
@@ -1377,13 +1439,22 @@ body {
     overflow-x: hidden;
   }
 
-  /* Center the About CTA button on small phones */
-  .about-content {
-    text-align: center;
+  /* About section mobile adjustments */
+  .about-card {
+    padding: var(--spacing-md);
   }
-  .about-content .about-features,
-  .about-content .about-feature {
-    text-align: left;
+  
+  .about-card-title {
+    font-size: 1.5rem;
+  }
+  
+  .about-image-full {
+    min-height: 300px;
+    max-height: 400px;
+  }
+  
+  .about-card-wrapper {
+    margin-top: -2rem;
   }
 
   .stats-grid {
@@ -1448,11 +1519,11 @@ body {
   }
 
   /* Center "Get Started Today" button on mobile */
-  .about-content .btn-large {
-    display: block !important;
-    margin: 0 auto !important;
-    text-align: center !important;
-    width: fit-content !important;
+  .about-card .btn-large {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: fit-content;
   }
 
   .hero-logo {
@@ -1470,11 +1541,11 @@ body {
   }
 
   /* Center "Get Started Today" button on mobile */
-  .about-content .btn-large {
-    display: block !important;
-    margin: 0 auto !important;
-    text-align: center !important;
-    width: fit-content !important;
+  .about-card .btn-large {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: fit-content;
   }
 
   .contact-form-wrapper {
