@@ -1148,24 +1148,74 @@ body {
   }
 
   .contact-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
-    padding: 0 var(--spacing-sm);
+    grid-template-columns: 1fr !important;
+    gap: var(--spacing-lg) !important;
+    padding: 0 var(--spacing-sm) !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
   }
-
+  
+  .contact-info {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
   .contact-card {
-    padding: var(--spacing-md);
-    min-width: 0;
-    word-wrap: break-word;
+    padding: var(--spacing-md) !important;
+    min-width: 0 !important;
+    word-wrap: break-word !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
   }
-
+  
   .contact-form-wrapper {
-    padding: var(--spacing-md);
-    min-width: 0;
+    padding: var(--spacing-md) !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  .contact-form {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
   }
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--spacing-lg) !important;
+    padding: 0 var(--spacing-sm) !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  .contact-info {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  .contact-card {
+    padding: var(--spacing-md) !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+  }
+  
+  .contact-form-wrapper {
+    padding: var(--spacing-md) !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  .contact-form {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
   }
 }
 
@@ -1182,7 +1232,7 @@ body {
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
-  
+
   /* Specific fixes for common overflow issues */
   .container,
   .hero-content,
@@ -1297,14 +1347,14 @@ body {
     max-width: 100%;
     overflow-x: hidden;
   }
-  
+
   /* Comprehensive mobile overflow prevention */
   * {
     max-width: 100% !important;
     word-wrap: break-word !important;
     overflow-wrap: break-word !important;
   }
-  
+
   /* Ensure all containers fit */
   .container,
   .hero,
@@ -1333,16 +1383,36 @@ body {
   }
 
   .contact-grid {
-    gap: var(--spacing-sm);
-    padding: 0 var(--spacing-xs);
+    grid-template-columns: 1fr !important;
+    gap: var(--spacing-sm) !important;
+    padding: 0 var(--spacing-xs) !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
   }
-
+  
+  .contact-info {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
   .contact-card {
-    padding: var(--spacing-sm);
+    padding: var(--spacing-sm) !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
   }
-
+  
   .contact-form-wrapper {
-    padding: var(--spacing-sm);
+    padding: var(--spacing-sm) !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  .contact-form {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
   }
 
   .hero-title {
