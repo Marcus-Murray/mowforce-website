@@ -695,6 +695,9 @@ body {
   padding: var(--spacing-xl);
   text-align: center;
   transition: var(--transition);
+  min-width: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .stat-card:hover {
@@ -1145,6 +1148,23 @@ body {
     overflow-x: hidden;
   }
   
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .stat-card {
+    padding: var(--spacing-md);
+    min-width: 0;
+    word-wrap: break-word;
+  }
+  
+  .stat-description {
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+  
   .nav-menu {
     position: fixed;
     top: 70px;
@@ -1179,7 +1199,7 @@ body {
     width: 100%;
     max-width: 100%;
   }
-  
+
   .hero-content {
     max-width: 100%;
     padding: 0 var(--spacing-sm);
@@ -1230,6 +1250,21 @@ body {
     padding: 0 var(--spacing-sm);
     max-width: 100%;
     overflow-x: hidden;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+    padding: 0 var(--spacing-xs);
+  }
+  
+  .stat-card {
+    padding: var(--spacing-sm);
+    min-width: 0;
+  }
+  
+  .stat-description {
+    font-size: 0.8rem;
   }
 
   .hero-title {
