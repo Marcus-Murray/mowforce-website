@@ -758,39 +758,59 @@ body {
    About Section
    ============================================ */
 .about {
-  padding: var(--spacing-3xl) 0;
   background: var(--light);
-  overflow: hidden;
 }
 
-.about-wrapper {
-  position: relative;
+.about-header-band {
+  background: linear-gradient(135deg, var(--grey-800), var(--grey-900));
+  padding: var(--spacing-3xl) 0;
+  text-align: center;
+}
+
+.about-band-title {
+  font-size: 3rem;
+  font-weight: var(--font-weight-bold);
+  color: white;
+  margin-bottom: var(--spacing-md);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.about-band-subtitle {
+  font-size: 1.25rem;
+  color: var(--grey-300);
+  margin: 0;
+  font-weight: var(--font-weight-medium);
+}
+
+.about-content-section {
+  padding: var(--spacing-3xl) 0;
+}
+
+.about-grid {
   display: grid;
-  grid-template-columns: 45% 55%;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3xl);
   align-items: center;
-  min-height: 650px;
-  max-width: 1400px;
-  margin: 0 auto;
 }
 
-.about-image-full {
+.about-image {
   position: relative;
-  height: 100%;
-  min-height: 650px;
 }
 
-.about-image-full img {
+.about-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 0 var(--radius-2xl) var(--radius-2xl) 0;
+  height: auto;
+  border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-xl);
+  object-fit: cover;
+  aspect-ratio: 3 / 4;
+  max-height: 600px;
 }
 
 .about-badge {
   position: absolute;
   bottom: var(--spacing-lg);
-  left: var(--spacing-lg);
+  right: var(--spacing-lg);
   background: var(--primary);
   color: var(--dark);
   padding: var(--spacing-md);
@@ -799,7 +819,6 @@ body {
   align-items: center;
   gap: var(--spacing-sm);
   box-shadow: var(--shadow-lg);
-  z-index: 2;
 }
 
 .about-badge i {
@@ -817,85 +836,59 @@ body {
   font-size: 0.875rem;
 }
 
-.about-card-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: var(--spacing-2xl);
-  margin-left: -3rem;
-  z-index: 3;
-  position: relative;
-}
-
-.about-card {
-  background: white;
-  padding: var(--spacing-2xl);
-  border-radius: var(--radius-2xl);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-  max-width: 600px;
-}
-
-.about-card-title {
-  font-size: 2rem;
-  font-weight: var(--font-weight-bold);
-  color: var(--grey-900);
-  margin-bottom: var(--spacing-sm);
-}
-
-.about-card-subtitle {
-  font-size: 1rem;
-  color: var(--grey-600);
-  margin-bottom: var(--spacing-lg);
-  line-height: 1.6;
-}
-
 .about-text {
   color: var(--grey-600);
   margin-bottom: var(--spacing-md);
   line-height: 1.8;
-  font-size: 0.9375rem;
+  font-size: 1rem;
 }
 
-.about-features-compact {
-  margin: var(--spacing-lg) 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
+.about-features {
+  margin: var(--spacing-xl) 0;
 }
 
-.about-feature-compact {
+.about-feature {
   display: flex;
   gap: var(--spacing-md);
-  align-items: flex-start;
+  padding: var(--spacing-md);
+  background: var(--grey-100);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-md);
+  transition: var(--transition);
 }
 
-.about-feature-compact i {
+.about-feature:hover {
+  background: var(--grey-200);
+  transform: translateX(8px);
+}
+
+.about-feature-icon {
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   background: var(--primary);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
-  color: var(--dark);
-  margin-top: 0.125rem;
 }
 
-.about-feature-compact strong {
-  display: block;
-  font-size: 0.9375rem;
+.about-feature-icon i {
+  font-size: 1.5rem;
+  color: var(--dark);
+}
+
+.about-feature-content h4 {
+  font-size: 1.125rem;
   font-weight: var(--font-weight-semibold);
   color: var(--grey-900);
-  margin-bottom: 0.125rem;
+  margin-bottom: 0.25rem;
 }
 
-.about-feature-compact span {
-  display: block;
-  font-size: 0.875rem;
+.about-feature-content p {
+  font-size: 0.9375rem;
   color: var(--grey-600);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* ============================================
@@ -1174,34 +1167,20 @@ body {
    Responsive Design
    ============================================ */
 @media (max-width: 1024px) {
-  .about-wrapper {
+  .about-grid {
     grid-template-columns: 1fr;
-    min-height: auto;
   }
 
-  .about-image-full {
-    min-height: 400px;
-    max-height: 500px;
+  .about-image {
+    order: -1;
   }
 
-  .about-image-full img {
-    border-radius: var(--radius-2xl);
+  .about-band-title {
+    font-size: 2.5rem;
   }
 
-  .about-card-wrapper {
-    margin-left: 0;
-    margin-top: -3rem;
-    padding: 0 var(--spacing-md);
-    justify-content: center;
-  }
-
-  .about-card {
-    max-width: 100%;
-  }
-
-  .about-badge {
-    left: auto;
-    right: var(--spacing-lg);
+  .about-band-subtitle {
+    font-size: 1.125rem;
   }
 
   .contact-grid {
@@ -1284,18 +1263,29 @@ body {
   }
 
   /* About section mobile adjustments */
-  .about-card {
-    padding: var(--spacing-lg);
+  .about-band-title {
+    font-size: 2rem;
   }
-  
-  .about-card-title {
-    font-size: 1.75rem;
+
+  .about-band-subtitle {
+    font-size: 1rem;
   }
-  
-  .about-feature-compact i {
-    width: 36px;
-    height: 36px;
-    font-size: 1.125rem;
+
+  .about-image img {
+    max-height: 400px;
+  }
+
+  .about-feature {
+    padding: var(--spacing-sm);
+  }
+
+  .about-feature-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .about-feature-icon i {
+    font-size: 1.25rem;
   }
 
   /* Ensure all elements fit within viewport */
@@ -1440,21 +1430,29 @@ body {
   }
 
   /* About section mobile adjustments */
-  .about-card {
-    padding: var(--spacing-md);
+  .about-band-title {
+    font-size: 1.75rem;
   }
-  
-  .about-card-title {
-    font-size: 1.5rem;
+
+  .about-band-subtitle {
+    font-size: 0.9375rem;
   }
-  
-  .about-image-full {
-    min-height: 300px;
-    max-height: 400px;
+
+  .about-image img {
+    max-height: 350px;
   }
-  
-  .about-card-wrapper {
-    margin-top: -2rem;
+
+  .about-feature {
+    padding: var(--spacing-xs);
+  }
+
+  .about-feature-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .about-feature-icon i {
+    font-size: 1.125rem;
   }
 
   .stats-grid {
