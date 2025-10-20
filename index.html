@@ -33,10 +33,13 @@
     <!-- Security Headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
     <meta
       http-equiv="Referrer-Policy"
       content="strict-origin-when-cross-origin"
     />
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';" />
 
     <title>MowForce - Professional Lawn Mowing Services | Christchurch</title>
 
@@ -47,6 +50,17 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    
+    <!-- Critical CSS for above-the-fold content -->
+    <style>
+      /* Critical styles for immediate rendering */
+      .navbar { position: fixed; top: 0; left: 0; right: 0; background: #343a40; z-index: 1000; }
+      .hero { min-height: 100vh; position: relative; }
+      .hero-content { text-align: center; color: #fff; }
+      .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+      body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; }
+      * { box-sizing: border-box; }
+    </style>
 
     <!-- Font Awesome -->
     <link
@@ -208,8 +222,9 @@
         <!-- Scroll Down Indicator -->
         <button
           class="scroll-down"
-          aria-label="Scroll to services"
+          aria-label="Scroll to services section"
           data-scroll-target="#services"
+          type="button"
         >
           <span class="scroll-glyph" aria-hidden="true"></span>
         </button>
@@ -529,7 +544,7 @@
     </main>
 
     <!-- Back To Top Button -->
-    <button class="back-to-top" aria-label="Back to top">
+    <button class="back-to-top" aria-label="Back to top of page" type="button">
       <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </button>
 

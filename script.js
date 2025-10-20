@@ -309,19 +309,35 @@
   /* ============================================
      Performance Optimization
      ============================================ */
-  // Lazy load images
-  if ('loading' in HTMLImageElement.prototype) {
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    images.forEach((img) => {
-      img.src = img.dataset.src || img.src;
+  // Lazy load images with intersection observer
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        if (img.dataset.src) {
+          img.src = img.dataset.src;
+          img.classList.remove('lazy');
+          observer.unobserve(img);
+        }
+      }
     });
-  } else {
-    // Fallback for browsers that don't support lazy loading
-    const script = document.createElement('script');
-    script.src =
-      'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
-    document.body.appendChild(script);
-  }
+  });
+
+  // Observe all lazy images
+  document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+    imageObserver.observe(img);
+  });
+
+  // Debounce scroll events for better performance
+  let scrollTimeout;
+  window.addEventListener('scroll', function() {
+    if (scrollTimeout) {
+      clearTimeout(scrollTimeout);
+    }
+    scrollTimeout = setTimeout(function() {
+      // Scroll handling code here
+    }, 10);
+  });
 
   /* ============================================
      Analytics Event Tracking (Optional)
