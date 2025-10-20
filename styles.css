@@ -819,6 +819,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  text-align: center;
 }
 
 .about-text {
@@ -829,7 +830,6 @@ body {
 }
 
 .about-features {
-  flex: 1;
   margin: var(--spacing-xl) 0;
 }
 
@@ -877,10 +877,6 @@ body {
   line-height: 1.6;
 }
 
-.about-cta-inline {
-  text-align: center;
-  margin-top: var(--spacing-lg);
-}
 
 /* ============================================
    Contact Section
