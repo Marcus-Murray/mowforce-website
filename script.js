@@ -169,9 +169,9 @@
         // Show success message
         const successMessage = document.getElementById('form-success');
         if (successMessage) {
-          successMessage.style.display = 'block';
+          successMessage.style.setProperty('display', 'block', 'important');
           setTimeout(() => {
-            successMessage.style.display = 'none';
+            successMessage.style.setProperty('display', 'none', 'important');
           }, 5000);
         }
 

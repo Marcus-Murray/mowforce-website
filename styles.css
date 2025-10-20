@@ -939,6 +939,7 @@ body {
   margin-top: var(--spacing-md);
   text-align: center;
   font-weight: var(--font-weight-medium);
+  display: none !important;
 }
 
 /* ============================================
