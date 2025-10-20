@@ -456,6 +456,7 @@ body {
 .hero-logo-inline-img {
   height: 375px;
   width: auto;
+  max-width: 100%;
   filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4))
     drop-shadow(0 0 40px rgba(128, 255, 0, 0.3));
   transition: var(--transition);
@@ -1139,6 +1140,11 @@ body {
 }
 
 @media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
   .nav-menu {
     position: fixed;
     top: 70px;
@@ -1171,6 +1177,12 @@ body {
 
   .hero-buttons .btn {
     width: 100%;
+    max-width: 100%;
+  }
+  
+  .hero-content {
+    max-width: 100%;
+    padding: 0 var(--spacing-sm);
   }
 
   .hero-features {
@@ -1188,7 +1200,8 @@ body {
   }
 
   .hero-logo-inline-img {
-    height: 270px;
+    height: 150px;
+    max-width: 100%;
   }
 
   .services-grid {
@@ -1215,6 +1228,8 @@ body {
 @media (max-width: 480px) {
   .container {
     padding: 0 var(--spacing-sm);
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   .hero-title {
@@ -1240,7 +1255,8 @@ body {
   }
 
   .hero-logo-inline-img {
-    height: 210px;
+    height: 120px;
+    max-width: 100%;
   }
 
   .contact-form-wrapper {
