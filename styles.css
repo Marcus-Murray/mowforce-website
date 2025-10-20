@@ -1226,6 +1226,16 @@ body {
     padding: 0 var(--spacing-sm);
   }
 
+  /* Center the About CTA button on mobile */
+  .about-content {
+    text-align: center;
+  }
+  /* Keep feature rows readable while parent is centered */
+  .about-content .about-features,
+  .about-content .about-feature {
+    text-align: left;
+  }
+
   /* Ensure all elements fit within viewport */
   * {
     max-width: 100%;
@@ -1367,6 +1377,15 @@ body {
     overflow-x: hidden;
   }
 
+  /* Center the About CTA button on small phones */
+  .about-content {
+    text-align: center;
+  }
+  .about-content .about-features,
+  .about-content .about-feature {
+    text-align: left;
+  }
+
   .stats-grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-sm);
@@ -1427,7 +1446,7 @@ body {
     padding: 0.875rem 1.5rem;
     font-size: 1rem;
   }
-  
+
   /* Center "Get Started Today" button on mobile */
   .about-content .btn-large {
     display: block !important;
@@ -1449,7 +1468,7 @@ body {
     height: 120px;
     max-width: 100%;
   }
-  
+
   /* Center "Get Started Today" button on mobile */
   .about-content .btn-large {
     display: block !important;
