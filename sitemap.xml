@@ -15,10 +15,18 @@
         </image:image>
     </url>
 
+    <!-- Services Page -->
+    <url>
+        <loc>https://mowforce.co.nz/services.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
     <!-- Services Section -->
     <url>
         <loc>https://mowforce.co.nz/#services</loc>
-        <lastmod>2024-01-01</lastmod>
+        <lastmod>2025-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -34,9 +42,17 @@
     <!-- Contact Section -->
     <url>
         <loc>https://mowforce.co.nz/#contact</loc>
-        <lastmod>2024-01-01</lastmod>
+        <lastmod>2025-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+    </url>
+
+    <!-- Privacy Policy -->
+    <url>
+        <loc>https://mowforce.co.nz/privacy-policy.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
     </url>
 
 </urlset>

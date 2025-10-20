@@ -817,9 +817,9 @@ body {
   text-align: left;
 }
 
-.about-cta-section {
+.about-cta-inline {
   text-align: center;
-  margin-top: var(--spacing-2xl);
+  margin-top: var(--spacing-xl);
 }
 
 .about-text {
@@ -876,7 +876,6 @@ body {
   color: var(--grey-600);
   line-height: 1.6;
 }
-
 
 /* ============================================
    Contact Section
@@ -1167,42 +1166,6 @@ body {
     aspect-ratio: 4 / 3;
   }
 
-
-
-  .contact-grid {
-    grid-template-columns: 1fr !important;
-    gap: var(--spacing-lg) !important;
-    padding: 0 var(--spacing-sm) !important;
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-  }
-
-  .contact-info {
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-  }
-
-  .contact-card {
-    padding: var(--spacing-md) !important;
-    min-width: 0 !important;
-    word-wrap: break-word !important;
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-    margin: 0 !important;
-  }
-
-  .contact-form-wrapper {
-    padding: var(--spacing-md) !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-  }
-
-  .contact-form {
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-  }
-
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1488,14 +1451,6 @@ body {
     font-size: 1rem;
   }
 
-  /* Center "Get Started Today" button on mobile */
-  .about-card .btn-large {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    width: fit-content;
-  }
-
   .hero-logo {
     top: var(--spacing-sm);
     right: var(--spacing-sm);
@@ -1508,14 +1463,6 @@ body {
   .hero-logo-inline-img {
     height: 120px;
     max-width: 100%;
-  }
-
-  /* Center "Get Started Today" button on mobile */
-  .about-card .btn-large {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    width: fit-content;
   }
 
   .contact-form-wrapper {

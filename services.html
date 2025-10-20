@@ -43,7 +43,7 @@
     />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; style-src-elem 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self'; base-uri 'self'; form-action 'self';"
+      content="default-src 'self'; script-src 'self' 'nonce-{NONCE}'; style-src 'self' 'nonce-{NONCE}' https://fonts.googleapis.com https://cdnjs.cloudflare.com; style-src-elem 'self' 'nonce-{NONCE}' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';"
     />
 
     <title>MowForce Services - Professional Lawn Care | Christchurch</title>
@@ -114,7 +114,7 @@
           <picture>
             <source srcset="assets/images/hero-mowing.jpg" />
             <img
-              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=600&fit=crop&q=80"
+              src="assets/images/hero-mowing.jpg"
               alt="Lawn care services"
               class="hero-bg-img"
             />
@@ -138,7 +138,7 @@
           <div class="service-detail-card">
             <div class="service-detail-image">
               <img
-                src="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=600&h=400&fit=crop&q=80"
+                src="assets/images/hero-mowing.jpg"
                 alt="Lawn maintenance and mowing"
                 loading="lazy"
               />
@@ -348,6 +348,13 @@
           <p>&copy; 2025 MowForce. All rights reserved.</p>
           <p>Owner: Marcus Murray</p>
           <p>Built by Cursor, Marcus Murray & AI Assistant</p>
+          <p>
+            <a
+              href="privacy-policy.html"
+              style="color: var(--grey-400); text-decoration: none"
+              >Privacy Policy</a
+            >
+          </p>
         </div>
       </div>
     </footer>
