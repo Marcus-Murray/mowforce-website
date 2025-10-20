@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Leafy autumn backyard">
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#c5e1fa"/>
+      <stop offset="100%" stop-color="#90caf9"/>
+    </linearGradient>
+    <linearGradient id="grass" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#66bb6a"/>
+      <stop offset="100%" stop-color="#43a047"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <rect y="520" width="1200" height="280" fill="url(#grass)"/>
+  <g fill="#ef6c00">
+    <circle cx="200" cy="560" r="12"/>
+    <circle cx="240" cy="590" r="10"/>
+    <circle cx="300" cy="570" r="14"/>
+    <circle cx="360" cy="600" r="9"/>
+    <circle cx="420" cy="580" r="11"/>
+    <circle cx="480" cy="610" r="10"/>
+    <circle cx="540" cy="565" r="12"/>
+  </g>
+  <text x="40" y="120" font-family="Poppins, Arial, sans-serif" font-size="56" fill="#1b5e20" opacity="0.9">Seasonal Clean-ups</text>
+  <text x="40" y="170" font-family="Poppins, Arial, sans-serif" font-size="24" fill="#1b5e20" opacity="0.8">Autumn backyard (placeholder)</text>
+</svg>
+
