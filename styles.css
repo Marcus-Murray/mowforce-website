@@ -777,10 +777,12 @@ body {
 
 .about-image-dominant img {
   width: 100%;
-  height: 600px;
+  height: auto;
   border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-xl);
   object-fit: cover;
+  aspect-ratio: 3 / 4;
+  max-height: 600px;
 }
 
 .about-badge {
@@ -816,7 +818,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 600px;
+  height: 100%;
   text-align: center;
 }
 
@@ -1163,6 +1165,7 @@ body {
 
   .about-image-dominant img {
     max-height: 500px;
+    aspect-ratio: 4 / 3;
   }
 
 
@@ -1250,6 +1253,7 @@ body {
 
   .about-image-dominant img {
     max-height: 400px;
+    aspect-ratio: 4 / 3;
   }
 
   .about-feature {
@@ -1410,6 +1414,7 @@ body {
 
   .about-image-dominant img {
     max-height: 350px;
+    aspect-ratio: 4 / 3;
   }
 
   .about-feature {
