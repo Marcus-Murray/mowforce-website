@@ -766,7 +766,7 @@ body {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: var(--spacing-3xl);
-  align-items: start;
+  align-items: stretch;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -815,7 +815,10 @@ body {
 }
 
 .about-content-compact {
-  padding-top: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .about-text {
@@ -826,6 +829,7 @@ body {
 }
 
 .about-features {
+  flex: 1;
   margin: var(--spacing-xl) 0;
 }
 
@@ -873,9 +877,9 @@ body {
   line-height: 1.6;
 }
 
-.about-cta {
+.about-cta-inline {
   text-align: center;
-  margin-top: var(--spacing-2xl);
+  margin-top: var(--spacing-lg);
 }
 
 /* ============================================
