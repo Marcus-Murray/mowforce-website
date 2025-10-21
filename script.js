@@ -158,7 +158,8 @@
           // Prepare email content
           const name = document.getElementById('name').value;
           const email = document.getElementById('email').value;
-          const phone = document.getElementById('phone').value || 'Not provided';
+          const phone =
+            document.getElementById('phone').value || 'Not provided';
           const message = document.getElementById('message').value;
 
           const emailBody = `Name: ${name}%0D%0AEmail: ${email}%0D%0APhone: ${phone}%0D%0A%0D%0AMessage:%0D%0A${message}`;
@@ -167,23 +168,13 @@
           // Open email client
           window.location.href = mailtoLink;
 
-          // Show success message
-          const successMessage = document.getElementById('form-success');
-          const errorMessage = document.getElementById('form-error');
-          
-          // Hide any existing error message
-          if (errorMessage) {
-            errorMessage.style.setProperty('display', 'none', 'important');
-          }
-          
-          if (successMessage) {
-            successMessage.style.setProperty('display', 'block', 'important');
-            setTimeout(() => {
-              successMessage.style.setProperty('display', 'none', 'important');
-            }, 5000);
-          }
+          // Redirect to thank you page after brief delay
+          // This allows the email client to open before redirect
+          setTimeout(() => {
+            window.location.href = 'thank-you.html';
+          }, 1500);
 
-          // Reset form
+          // Reset form (though user will be redirected)
           contactForm.reset();
 
           // Remove validation classes
@@ -194,12 +185,12 @@
           // Show error message
           const errorMessage = document.getElementById('form-error');
           const successMessage = document.getElementById('form-success');
-          
+
           // Hide any existing success message
           if (successMessage) {
             successMessage.style.setProperty('display', 'none', 'important');
           }
-          
+
           if (errorMessage) {
             errorMessage.style.setProperty('display', 'block', 'important');
             setTimeout(() => {
