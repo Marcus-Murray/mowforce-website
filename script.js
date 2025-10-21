@@ -165,6 +165,15 @@
           const emailBody = `Name: ${name}%0D%0AEmail: ${email}%0D%0APhone: ${phone}%0D%0A%0D%0AMessage:%0D%0A${message}`;
           const mailtoLink = `mailto:marcus@mowforce.co.nz?subject=New Quote Request from ${name}&body=${emailBody}`;
 
+          // Store form data for thank-you page
+          const formData = {
+            name: name,
+            email: email,
+            phone: phone,
+            message: message
+          };
+          localStorage.setItem('formData', JSON.stringify(formData));
+          
           // Open email client first
           window.location.href = mailtoLink;
           
