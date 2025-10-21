@@ -165,9 +165,13 @@
           const emailBody = `Name: ${name}%0D%0AEmail: ${email}%0D%0APhone: ${phone}%0D%0A%0D%0AMessage:%0D%0A${message}`;
           const mailtoLink = `mailto:marcus@mowforce.co.nz?subject=New Quote Request from ${name}&body=${emailBody}`;
 
-          // Redirect to thank you page immediately
-          // The thank you page will handle the email functionality
-          window.location.href = 'thank-you.html';
+          // Open email client first
+          window.location.href = mailtoLink;
+          
+          // Then redirect to thank you page after a short delay
+          setTimeout(() => {
+            window.location.href = 'thank-you.html';
+          }, 1500);
 
           // Reset form (though user will be redirected)
           contactForm.reset();
