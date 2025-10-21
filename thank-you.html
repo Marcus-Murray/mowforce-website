@@ -38,7 +38,7 @@
     />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' 'nonce-{NONCE}' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'nonce-{NONCE}' https://fonts.googleapis.com https://cdnjs.cloudflare.com; style-src-elem 'self' 'nonce-{NONCE}' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; base-uri 'self'; form-action 'self'; frame-ancestors 'none';"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; style-src-elem 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; base-uri 'self'; form-action 'self';"
     />
 
     <title>Thank You - MowForce Professional Lawn Mowing Services</title>
@@ -324,22 +324,27 @@
 
     <!-- Scripts -->
     <script src="script.js"></script>
-    
+
     <!-- Auto-open email client for form submissions -->
     <script>
       // Check if user came from contact form and auto-open email client
-      if (document.referrer.includes('index.html') || document.referrer.includes('mowforce.co.nz')) {
+      if (
+        document.referrer.includes('index.html') ||
+        document.referrer.includes('mowforce.co.nz')
+      ) {
         // Get form data from URL parameters if available
         const urlParams = new URLSearchParams(window.location.search);
         const name = urlParams.get('name') || 'Customer';
         const email = urlParams.get('email') || '';
         const phone = urlParams.get('phone') || 'Not provided';
-        const message = urlParams.get('message') || 'I would like to request a quote for lawn care services.';
-        
+        const message =
+          urlParams.get('message') ||
+          'I would like to request a quote for lawn care services.';
+
         // Create mailto link
         const emailBody = `Name: ${name}%0D%0AEmail: ${email}%0D%0APhone: ${phone}%0D%0A%0D%0AMessage:%0D%0A${message}`;
         const mailtoLink = `mailto:marcus@mowforce.co.nz?subject=New Quote Request from ${name}&body=${emailBody}`;
-        
+
         // Open email client after a short delay
         setTimeout(() => {
           window.location.href = mailtoLink;
