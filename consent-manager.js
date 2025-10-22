@@ -13,6 +13,7 @@ class ConsentManager {
   }
 
   init() {
+    console.log('🍃 MowForce Consent Manager: Initializing...');
     // Wait for DOM to be ready
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', () => this.setupConsent());
@@ -22,10 +23,12 @@ class ConsentManager {
   }
 
   setupConsent() {
+    console.log('🍃 MowForce Consent Manager: Setting up consent...');
     this.createConsentBanner();
     this.createConsentModal();
     this.loadSavedConsent();
     this.setupGoogleConsentMode();
+    console.log('🍃 MowForce Consent Manager: Setup complete!');
   }
 
   createConsentBanner() {
@@ -54,7 +57,7 @@ class ConsentManager {
       <div id="consent-modal" class="consent-modal">
         <div class="consent-modal-content">
           <h2>🍃 Privacy Settings</h2>
-          
+
           <div class="consent-option">
             <h4>Essential Cookies</h4>
             <p>These cookies are necessary for the website to function and cannot be switched off. They are usually only set in response to actions made by you which amount to a request for services.</p>
@@ -98,34 +101,40 @@ class ConsentManager {
     // Set default consent mode (deny all until user consents)
     if (typeof gtag !== 'undefined') {
       gtag('consent', 'default', {
-        'analytics_storage': 'denied',
-        'ad_storage': 'denied',
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied'
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
       });
     }
   }
 
   loadSavedConsent() {
+    console.log('🍃 MowForce Consent Manager: Loading saved consent...');
     const analytics = localStorage.getItem('consent-analytics') === 'true';
     const advertising = localStorage.getItem('consent-advertising') === 'true';
     const consentDate = localStorage.getItem('consent-date');
-    
+
+    console.log('🍃 Saved consent:', { analytics, advertising, consentDate });
+
     // Check if consent has expired
     if (consentDate) {
       const oneYearAgo = new Date();
       oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
-      
+
       if (new Date(consentDate) < oneYearAgo) {
         // Consent expired, show banner
+        console.log('🍃 Consent expired, showing banner');
         this.showConsentBanner();
         return;
       }
     }
 
     if (analytics || advertising) {
+      console.log('🍃 User has given consent, hiding banner');
       this.hideConsentBanner();
     } else {
+      console.log('🍃 No consent given, showing banner');
       this.showConsentBanner();
     }
 
@@ -134,8 +143,12 @@ class ConsentManager {
   }
 
   showConsentBanner() {
+    console.log('🍃 Showing consent banner...');
     if (this.consentBanner) {
       this.consentBanner.classList.add('show');
+      console.log('🍃 Banner should now be visible');
+    } else {
+      console.error('🍃 Consent banner element not found!');
     }
   }
 
@@ -172,7 +185,7 @@ class ConsentManager {
   saveConsentSettings() {
     const analytics = document.getElementById('analytics').checked;
     const advertising = document.getElementById('advertising').checked;
-    
+
     this.setConsent(true, analytics, advertising);
     this.hideConsentBanner();
     this.closeConsentSettings();
@@ -189,23 +202,30 @@ class ConsentManager {
     // Update Google Consent Mode
     if (typeof gtag !== 'undefined') {
       gtag('consent', 'update', {
-        'analytics_storage': analytics ? 'granted' : 'denied',
-        'ad_storage': advertising ? 'granted' : 'denied',
-        'ad_user_data': advertising ? 'granted' : 'denied',
-        'ad_personalization': advertising ? 'granted' : 'denied'
+        analytics_storage: analytics ? 'granted' : 'denied',
+        ad_storage: advertising ? 'granted' : 'denied',
+        ad_user_data: advertising ? 'granted' : 'denied',
+        ad_personalization: advertising ? 'granted' : 'denied',
       });
     }
 
-    console.log('🍃 MowForce Consent Updated:', { essential, analytics, advertising });
+    console.log('🍃 MowForce Consent Updated:', {
+      essential,
+      analytics,
+      advertising,
+    });
   }
 
   logConsentAction(action, data = {}) {
     // Log consent actions for analytics (if consent is granted)
-    if (typeof gtag !== 'undefined' && localStorage.getItem('consent-analytics') === 'true') {
+    if (
+      typeof gtag !== 'undefined' &&
+      localStorage.getItem('consent-analytics') === 'true'
+    ) {
       gtag('event', 'consent_action', {
-        'event_category': 'privacy',
-        'event_label': action,
-        'custom_parameters': data
+        event_category: 'privacy',
+        event_label: action,
+        custom_parameters: data,
       });
     }
   }
@@ -216,7 +236,7 @@ class ConsentManager {
       essential: localStorage.getItem('consent-essential') === 'true',
       analytics: localStorage.getItem('consent-analytics') === 'true',
       advertising: localStorage.getItem('consent-advertising') === 'true',
-      date: localStorage.getItem('consent-date')
+      date: localStorage.getItem('consent-date'),
     };
   }
 
@@ -227,6 +247,12 @@ class ConsentManager {
     localStorage.removeItem('consent-advertising');
     localStorage.removeItem('consent-date');
     location.reload();
+  }
+
+  // Public method to force show banner (for testing)
+  forceShowBanner() {
+    console.log('🍃 Force showing banner for testing...');
+    this.showConsentBanner();
   }
 }
 
