@@ -66,7 +66,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="MowForce%20Logo1.png" />
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) - Google Ads -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=AW-17668409642"
@@ -78,6 +78,20 @@
       }
       gtag('js', new Date());
       gtag('config', 'AW-17668409642');
+    </script>
+
+    <!-- Google tag (gtag.js) - Google Analytics 4 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-ZSN8Y4LCVW"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-ZSN8Y4LCVW');
     </script>
 
     <!-- Google Ads Conversion Tracking -->
@@ -335,15 +349,17 @@
         // Get form data from localStorage
         const formData = localStorage.getItem('formData');
         console.log('Stored form data:', formData);
-        
+
         if (formData) {
           const data = JSON.parse(formData);
           console.log('Parsed data:', data);
-          
+
           const name = data.name || 'Customer';
           const email = data.email || '';
           const phone = data.phone || 'Not provided';
-          const message = data.message || 'I would like to request a quote for lawn care services.';
+          const message =
+            data.message ||
+            'I would like to request a quote for lawn care services.';
 
           console.log('Using data:', { name, email, phone, message });
 
