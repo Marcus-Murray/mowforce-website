@@ -170,17 +170,13 @@
             name: name,
             email: email,
             phone: phone,
-            message: message
+            message: message,
           };
           localStorage.setItem('formData', JSON.stringify(formData));
-          
-          // Open email client first
-          window.location.href = mailtoLink;
-          
-          // Then redirect to thank you page after a short delay
-          setTimeout(() => {
-            window.location.href = 'thank-you.html';
-          }, 1500);
+
+          // Redirect to thank you page immediately
+          // The thank-you page will handle opening the email client
+          window.location.href = 'thank-you.html';
 
           // Reset form (though user will be redirected)
           contactForm.reset();

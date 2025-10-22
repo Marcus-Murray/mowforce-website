@@ -334,24 +334,34 @@
       ) {
         // Get form data from localStorage
         const formData = localStorage.getItem('formData');
+        console.log('Stored form data:', formData);
+        
         if (formData) {
           const data = JSON.parse(formData);
+          console.log('Parsed data:', data);
+          
           const name = data.name || 'Customer';
           const email = data.email || '';
           const phone = data.phone || 'Not provided';
           const message = data.message || 'I would like to request a quote for lawn care services.';
 
+          console.log('Using data:', { name, email, phone, message });
+
           // Create mailto link with actual form data
           const emailBody = `Name: ${name}%0D%0AEmail: ${email}%0D%0APhone: ${phone}%0D%0A%0D%0AMessage:%0D%0A${message}`;
           const mailtoLink = `mailto:marcus@mowforce.co.nz?subject=New Quote Request from ${name}&body=${emailBody}`;
+
+          console.log('Mailto link:', mailtoLink);
 
           // Open email client after a short delay
           setTimeout(() => {
             window.location.href = mailtoLink;
           }, 2000);
-          
+
           // Clear the stored data
           localStorage.removeItem('formData');
+        } else {
+          console.log('No form data found in localStorage');
         }
       }
     </script>
